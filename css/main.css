@@ -1816,7 +1816,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ee9170;
+  background: #c3ffaf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2932,4 +2932,16 @@ hr {
 }
 .page-post-detail .sidebar-toggle-line {
   background: #fefefe;
+}
+.header {
+  background: url("/images/top.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0px 50%;
+}
+.header-inner {
+  padding: 75px 0 75px;
+}
+.site-nav {
+  border-top: none;
 }
