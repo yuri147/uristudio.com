@@ -201,7 +201,7 @@ var init = function init(num) {
 
 if (window.screen.width > 750) {
   window.addEventListener('load', function() {
-    init(30);
+    init(45);
     // setTimeout(() => {
     //   init(30)
     // }, 500);

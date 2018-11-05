@@ -1839,7 +1839,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cd09d6;
+  background: #16aaff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3002,6 +3002,7 @@ code {
   padding: 25px;
   background: #fff;
   transition-duration: 1s;
+  border-radius: 10px;
 }
 .pace-running .post {
   box-shadow: none;
@@ -3097,5 +3098,5 @@ code {
   height: 100%;
 }
 .header {
-  background: transparent;
+  background: rgba(0,0,0,0.05);
 }
