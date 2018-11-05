@@ -189,14 +189,30 @@ var init = function init(num) {
     circles.push(new Circle(Math.random() * w, Math.random() * h));
   }
   draw();
+  ctx.globalAlpha = 0;
+  var int = self.setInterval(function(){
+    ctx.globalAlpha += 0.05;
+    if(ctx.globalAlpha >=1){
+      window.clearInterval(int);
+    }
+  },150)
 };
-window.addEventListener('load', init(60));
-window.onmousemove = function(e) {
-  e = e || window.event;
-  current_circle.x = e.clientX;
-  current_circle.y = e.clientY;
-};
-window.onmouseout = function() {
-  current_circle.x = null;
-  current_circle.y = null;
-};
+
+
+if (window.screen.width > 750) {
+  window.addEventListener('load', function() {
+    init(30);
+    // setTimeout(() => {
+    //   init(30)
+    // }, 500);
+  });
+  window.onmousemove = function(e) {
+    e = e || window.event;
+    current_circle.x = e.clientX;
+    current_circle.y = e.clientY;
+  };
+  window.onmouseout = function() {
+    current_circle.x = null;
+    current_circle.y = null;
+  };
+}
