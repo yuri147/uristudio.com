@@ -187,7 +187,7 @@ var draw = function draw() {
 var init = function init(num) {
   for (var i = 0; i < num; i++) {
     // circles.push(new Circle(Math.random() * w, Math.random() * h));
-    console.info(i / num);
+    // console.info(i / num);
     circles.push(new Circle(((i + 1) / num) * w, Math.random() * h));
   }
   draw();
@@ -202,7 +202,7 @@ var init = function init(num) {
 
 if (window.screen.width > 750) {
   window.addEventListener('load', function() {
-    init(80);
+    init(30);
     // setTimeout(() => {
     //   init(30)
     // }, 500);
