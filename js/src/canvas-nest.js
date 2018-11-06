@@ -53,9 +53,9 @@ var Circle = (function() {
     this.y = y;
     // console.info(Math.random())
     if (Math.random() > 0.5) {
-      this.r = 5;
+      this.r = 3;
     } else {
-      this.r = 2;
+      this.r = 1;
     }
     // this.r = Math.random() * 10;
     this._mx = Math.random();
@@ -70,7 +70,7 @@ var Circle = (function() {
         //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
         ctx.fill();
       }
     },
@@ -80,7 +80,7 @@ var Circle = (function() {
         var dx = this.x - _circle.x;
         var dy = this.y - _circle.y;
         var d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 110) {
+        if (d < 140 && d > 50) {
           ctx.beginPath();
 
           ctx.moveTo(this.x, this.y); //起始点
@@ -97,7 +97,7 @@ var Circle = (function() {
         this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
         this._my = this.y < h && this.y > 0 ? this._my : -this._my;
         this.x += this._mx / 2;
-        this.y += this._my / 2;
+        this.y += this._my / 4;
       }
     }
   ]);
@@ -186,22 +186,23 @@ var draw = function draw() {
 
 var init = function init(num) {
   for (var i = 0; i < num; i++) {
-    circles.push(new Circle(Math.random() * w, Math.random() * h));
+    // circles.push(new Circle(Math.random() * w, Math.random() * h));
+    console.info(i / num);
+    circles.push(new Circle(((i + 1) / num) * w, Math.random() * h));
   }
   draw();
   ctx.globalAlpha = 0;
-  var int = self.setInterval(function(){
+  var int = self.setInterval(function() {
     ctx.globalAlpha += 0.05;
-    if(ctx.globalAlpha >=1){
+    if (ctx.globalAlpha >= 1) {
       window.clearInterval(int);
     }
-  },150)
+  }, 150);
 };
-
 
 if (window.screen.width > 750) {
   window.addEventListener('load', function() {
-    init(45);
+    init(80);
     // setTimeout(() => {
     //   init(30)
     // }, 500);

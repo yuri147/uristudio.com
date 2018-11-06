@@ -3,11 +3,11 @@ var titleTime;
 document.addEventListener('visibilitychange', function() {
   if (document.hidden) {
     $('[rel="shortcut icon"]').attr('href', '/TEP.png');
-    document.title = 'w(ﾟДﾟ)w 你走了';
+    document.title = 'w(ﾟДﾟ)w' + OriginTitile;
     clearTimeout(titleTime);
   } else {
     $('[rel="shortcut icon"]').attr('href', '/favicon.png');
-    document.title = '♪(^∇^*)你又来了 ';
+    document.title = '♪(^∇^*)' + OriginTitile;
     titleTime = setTimeout(function() {
       document.title = OriginTitile;
     }, 3000);
