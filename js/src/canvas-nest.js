@@ -80,13 +80,13 @@ var Circle = (function() {
         var dx = this.x - _circle.x;
         var dy = this.y - _circle.y;
         var d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 140 && d > 50) {
+        if (d < 140 && d > 10) {
           ctx.beginPath();
 
           ctx.moveTo(this.x, this.y); //起始点
           ctx.lineTo(_circle.x, _circle.y); //终点
           ctx.closePath();
-          ctx.strokeStyle = 'rgba(0, 0, 0, 0.05)';
+          ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
           ctx.stroke();
         }
       }
@@ -96,7 +96,7 @@ var Circle = (function() {
       value: function move(w, h) {
         this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
         this._my = this.y < h && this.y > 0 ? this._my : -this._my;
-        this.x += this._mx / 2;
+        this.x += this._mx / 3;
         this.y += this._my / 4;
       }
     }
