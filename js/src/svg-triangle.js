@@ -1,4 +1,4 @@
-var refreshDuration = 10000;
+var refreshDuration = 7000;
 var refreshTimeout;
 var numPointsX;
 var numPointsY;
@@ -47,7 +47,7 @@ function onLoad() {
       var bottomRightX = points[i + numPointsX + 1].x;
       var bottomRightY = points[i + numPointsX + 1].y;
 
-      var rando = Math.floor(Math.random() * 2);
+      var rando = Math.floor(Math.random() *1);
 
       for (var n = 0; n < 2; n++) {
         var polygon = document.createElementNS(svg.namespaceURI, 'polygon');
@@ -129,7 +129,7 @@ function onLoad() {
             );
           }
         }
-        polygon.setAttribute('fill', 'rgba(245,245,245,' + Math.random() / 1 + ')');
+        polygon.setAttribute('fill', 'rgba(245,245,245,' + Math.random()  + ')');
         var animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
         animate.setAttribute('fill', 'freeze');
         animate.setAttribute('attributeName', 'points');

@@ -80,13 +80,13 @@ var Circle = (function() {
         var dx = this.x - _circle.x;
         var dy = this.y - _circle.y;
         var d = Math.sqrt(dx * dx + dy * dy);
-        if (d < 140 && d > 10) {
+        if (d < 122 && d > 1) {
           ctx.beginPath();
 
           ctx.moveTo(this.x, this.y); //起始点
           ctx.lineTo(_circle.x, _circle.y); //终点
           ctx.closePath();
-          ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
+          ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
           ctx.stroke();
         }
       }
@@ -128,7 +128,7 @@ var currentCirle = (function(_Circle) {
         ctx.arc(this.x, this.y, this.r, 0, 360);
         ctx.closePath();
         // ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
         ctx.fill();
       }
     }
@@ -202,7 +202,7 @@ var init = function init(num) {
 
 if (window.screen.width > 750) {
   window.addEventListener('load', function() {
-    init(30);
+    // init(25);
     // setTimeout(() => {
     //   init(30)
     // }, 500);
