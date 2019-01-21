@@ -1876,7 +1876,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8ff1d;
+  background: #e0ff32;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2911,6 +2911,9 @@ hr {
 }
 html {
   margin-right: -1px;
+}
+.post-body p {
+  text-indent: 2em;
 }
 *::-webkit-scrollbar {
   width: 4px;
